@@ -1,0 +1,7 @@
+/vendor
+/.git
+/.idea
+.env
+.env.behat
+.project
+*.note

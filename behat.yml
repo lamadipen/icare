@@ -1,0 +1,20 @@
+# behat.yml
+default:
+    extensions:
+        Laracasts\Behat:
+          env_path: .env.behat
+        Laracasts\Behat\ServiceContainer\BehatExtension: ~
+        Behat\MinkExtension\ServiceContainer\MinkExtension:
+            base_url: http://icarecomfort.localhost
+            default_session: selenium2
+            laravel: ~
+            #browser_name: 'firefox'
+            selenium2:
+              capabilities: { "browser": "firefox"}
+    suites:
+      frontend:
+        contexts:
+          - FeatureContext:
+              parameters:
+                environment: acceptance
+                base_url: http://icarecomfort.localhost
