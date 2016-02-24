@@ -36,7 +36,7 @@
                                                     <td class="sorting_1">{{ $product['title'] }}</td>
                                                     <td>
                                                         {!! \Illuminate\Html\FormFacade::open(['method' => 'DELETE', 'route' => ['admin.product.destroy', $product['id']]]) !!}
-                                                        <a id="" class="btn btn-default navbar-btn" href="{{ url('admin/category/'.$product['id']) }}">show</a>
+                                                        <a id="" class="btn btn-default navbar-btn" href="{{ url('admin/product/'.$product['id']) }}">show</a>
                                                         <a id="{{ $product['id'] }}" class="btn btn-default navbar-btn" href="{{ url('admin/product/'.$product['id'].'/edit') }}">edit</a>
                                                         {!! \Illuminate\Html\FormFacade::submit('delete', ['class' => 'btn btn-danger', 'name' => 'delete_'.$product['id']]) !!}
                                                         {!! \Illuminate\Html\FormFacade::close() !!}

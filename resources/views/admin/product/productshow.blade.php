@@ -10,11 +10,11 @@
                     </div>
                     <div class="panel-body">
                         <div class="col-md-8">
-                            <h2>{{ $category->title }}</h2>
+                            <h2>{{ $product->title }}</h2>
                         </div>
 
                         <div class="col-md-8">
-                            {!! $category->description !!}
+                            {!! $product->description !!}
                         </div>
                     </div>
                  </div>

@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 
 @section('content')
@@ -13,41 +14,54 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Edit Category
+                        Edit Product
                     </div>
                     <div class="panel-body">
-                        {!! \Illuminate\Html\FormFacade::open(['method' => 'PATCH', 'route' => ['admin.category.update', $category->id]]) !!}
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="name">Title</label>
-                            <div class="col-md-6">
-                                <input id="title" type="text" class="form-control" name="title" value="{{ $category['title'] }}">
+                        {!! \Illuminate\Html\FormFacade::open(['method' => 'PATCH', 'route' => ['admin.product.update', $product->id]]) !!}
+                        
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Title</label>
+                                <div class="col-md-6">
+                                    <input id="title" type="text" class="form-control" name="title" value="{{ $product['title'] }}"/>
+                                </div>
                             </div>
-                        </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="parentid">Category</label>
+                                <div class="col-md-6">
+                                    <select id="parentid" name="parentid" class="form-control" >
+                                        <option value="0">Select Parent</option>
+                                         @foreach($categories as $category)
+                                        <option value="{{ $category['id'] }}"  @if($product['cat_id']==$category['id']) selected @endif >{{ $category['title'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Weight</label>
+                                <div class="col-md-6">
+                                    <input id="title" type="text" class="form-control" name="title" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Price</label>
+                                <div class="col-md-6">
+                                    <input id="title" type="text" class="form-control" name="title" value="">
+                                </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="description">Description</label>
-                            <div class="col-md-6">
-                                <textarea id="description" type="text" class="form-control ckeditor" name="description">{{ $category['description'] }}</textarea>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="description">Description</label>
+                                <div class="col-md-6">
+                                    <textarea id="description" type="text" class="form-control ckeditor" name="description">{{ $product['description'] }}</textarea>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="parentid">Parent Category</label>
-                            <div class="col-md-6">
-                                <select id="parentid" name="parentid">
-                                    <option value="0" @if($category['parentid']==0) selected @endif>Select Parent</option>
-                                    @foreach($categories as $cat_value)
-                                        <option value="{{ $cat_value['id'] }}" @if($category['parentid']==$cat_value['id']) selected @endif>{{ $cat_value['title'] }}</option>
-                                    @endforeach
-                                </select>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    {!! \Illuminate\Html\FormFacade::submit('Register', ['class' => 'btn btn-primary', 'name' => 'submit']) !!}
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                {!! \Illuminate\Html\FormFacade::submit('Register', ['class' => 'btn btn-primary', 'name' => 'submit']) !!}
-                            </div>
-                        </div>
 
 
                         {!! \Illuminate\Html\FormFacade::close() !!}
