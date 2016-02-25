@@ -25,11 +25,17 @@
                                     <input id="title" type="text" class="form-control" name="title" value="">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Slug</label>
+                                <div class="col-md-6">
+                                    <input id="slug" type="text" class="form-control" name="slug" value="">
+                                </div>
+                            </div>
                             
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="parentid">Parent Category</label>
+                                <label class="col-md-4 control-label" for="parentid">Category</label>
                                 <div class="col-md-6">
-                                    <select id="parentid" name="parentid" class="form-control" >
+                                    <select id="category_id" name="category_id" class="form-control" >
                                         <option value="0">Select Parent</option>
                                          @foreach($categories as $category)
                                         <option value="{{ $category['id'] }}">{{ $category['title'] }}</option>
@@ -40,13 +46,13 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="title">Weight</label>
                                 <div class="col-md-6">
-                                    <input id="title" type="text" class="form-control" name="title" value="">
+                                    <input id="title" type="text" class="form-control" name="weight" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="title">Price</label>
                                 <div class="col-md-6">
-                                    <input id="title" type="text" class="form-control" name="title" value="">
+                                    <input id="title" type="text" class="form-control" name="price" value="">
                                 </div>
                             </div>
 

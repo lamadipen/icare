@@ -16,7 +16,7 @@ class Product extends Model {
      *
      * @var array
      */
-    protected $fillable = ['title', 'description','slug', 'price', 'weight'];
+    protected $fillable = ['title', 'description','slug', 'price', 'weight','cat_id'];
 
     /**
      * Input validation Rules.
@@ -25,8 +25,7 @@ class Product extends Model {
      */
     static $storeRules = array(
         'title'         => 'required',
-        'description'   => 'required',
-        'slug'          => 'required',
+        'description'   => 'required',       
         'price'         => 'required',
         'weight'        => 'required'
     );

@@ -25,12 +25,18 @@
                                     <input id="title" type="text" class="form-control" name="title" value="{{ $product['title'] }}"/>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Slug</label>
+                                <div class="col-md-6">
+                                    <input id="slug" type="text" class="form-control" name="slug" value="{{ $product['slug'] }}">
+                                </div>
+                            </div>
                             
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="parentid">Category</label>
                                 <div class="col-md-6">
                                     <select id="parentid" name="parentid" class="form-control" >
-                                        <option value="0">Select Parent</option>
+                                        <option value="0">Select Caltgory</option>
                                          @foreach($categories as $category)
                                         <option value="{{ $category['id'] }}"  @if($product['cat_id']==$category['id']) selected @endif >{{ $category['title'] }}</option>
                                         @endforeach

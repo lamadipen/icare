@@ -4,6 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+
 use App\Product;
 use App\Category;
 
@@ -38,9 +41,28 @@ class ProductController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+         try{
+            $this->validate($request, Product::$storeRules);
+
+            $product = new Product();
+            $product->title = Input::get('title');
+            $product->description = Input::get('description');
+            $product->slug = Input::get('slug');
+            $product->cat_id = Input::get('category_id');
+            $product->weight = Input::get('weight');
+            $product->price = Input::get('price');
+            $product->description = Input::get('description');            
+           
+            $product->save();
+
+            return Redirect::to('admin/product');
+        }
+        catch(Exception $e) {
+            return redirect('admin/product/create')->with('message','New product could not be created.');
+        }
 	}
 
 	/**
@@ -106,9 +128,8 @@ class ProductController extends Controller {
 		//
         $product = Product::findOrFail($id);              
         $product->forceDelete();
-  
-      
-        //return Redirect::to('admin/product');
+        
+        return Redirect::to('admin/product');
 	}
 
 }
