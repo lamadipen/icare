@@ -44,11 +44,12 @@ class ProductController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+
 		//
          try{            
 
             $this->validate($request, Product::$storeRules);
-            if($request->hasFile('thumb') && $request->hasFile('mid') && $request->hasFile('big')) {
+            if($request->hasFile('thumb') && $request->hasFile('mid') && $request->hasFile('big')) {     
                 
                 $product = new Product();
                 $product->title = Input::get('title');
@@ -58,15 +59,15 @@ class ProductController extends Controller {
                 $product->weight = Input::get('weight');
                 $product->price = Input::get('price');
                 $product->description = Input::get('description');                       
-                $product->save();
+                $product->save();    
             
                 //Getting Last inserted id            
                 $insertedId = $product->id;
- 
+
                 $product_pic = new ProductPicture();
                 $product_pic->caption = Input::get('caption');
                 $product_pic->isdefault = Input::get('is_default');
-                $product_pic->productid = $insertedId;                
+                $product_pic->product_id = $insertedId;                
                 $product_pic->order = Input::get('order');
                 
                 $timestamp = strtotime(date('Y-m-d'));
@@ -83,6 +84,7 @@ class ProductController extends Controller {
                 $product_pic->filename_thumb = $name_thumb;
                 $product_pic->filename_mid =  $name_mid ;
                 $product_pic->filename_big = $name_big;
+            
                 $product_pic->save();
                 
                 

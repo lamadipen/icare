@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\ProductPicture;
+use App\Category;
 
 class ProductController extends Controller {
 
@@ -34,7 +35,12 @@ class ProductController extends Controller {
 	 */
 	public function index()
 	{
-        return view('product');
+        
+        //    
+        $products = Product::paginate(15)->toArray();
+        
+        //var_dump($products);                       
+        return view('products_list')->with('products',$products);        
 	}
 
     /**

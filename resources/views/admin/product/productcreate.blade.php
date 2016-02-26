@@ -101,6 +101,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Order</label>
+                                <div class="col-md-6">
+                                    <input id="order" type="text" class="form-control" name="order" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-md-4 control-label" for="title">Default</label>
                                 <div class="col-md-6">
                                     <label>Yes</label>
