@@ -10,13 +10,16 @@
     
     <div class="container">
         <div class="row">
+            
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Create New Product
                     </div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/product') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/product') }}" enctype="multipart/form-data" >
+                    
+                    <!-- first form section start-->
+                    <div class="panel-body col-lg-6">                        
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
@@ -68,11 +71,52 @@
                                         Register
                                     </button>
                                 </div>
-                            </div>
-                        </form>
+                            </div>                
                     </div>
+                    <!-- first form section end-->
+                    <!-- second form section start-->
+                    <div class="panel-body col-lg-6">                                                                        
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Thumbnail</label>
+                                <div class="col-md-6">
+                                    {!! \Illuminate\Html\FormFacade::file('thumb') !!}
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Medium Image</label>
+                                <div class="col-md-6">
+                                    {!! \Illuminate\Html\FormFacade::file('mid') !!}
+                                </div>
+                            </div>                                                                 
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Big Image</label>
+                                <div class="col-md-6">
+                                    {!! \Illuminate\Html\FormFacade::file('big') !!}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Caption</label>
+                                <div class="col-md-6">
+                                    <input id="caption" type="text" class="form-control" name="caption" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Default</label>
+                                <div class="col-md-6">
+                                    <label>Yes</label>
+                                    {!!  Form::radio('is_default', 'true', false); !!}
+                                    <label>No</label>
+                                    {!!  Form::radio('is_default', 'false', true); !!}
+                                </div>
+                            </div>                                                        
+                    </div>
+                    <!-- second form section end-->
+                    </form>
                  </div>
             </div>
+            
+            
+            
         </div>
     </div>
 @endsection

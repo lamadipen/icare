@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="parentid">Category</label>
                                 <div class="col-md-6">
-                                    <select id="parentid" name="parentid" class="form-control" >
+                                    <select id="category_id" name="category_id" class="form-control" >
                                         <option value="0">Select Caltgory</option>
                                          @foreach($categories as $category)
                                         <option value="{{ $category['id'] }}"  @if($product['cat_id']==$category['id']) selected @endif >{{ $category['title'] }}</option>
@@ -46,13 +46,13 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="title">Weight</label>
                                 <div class="col-md-6">
-                                    <input id="title" type="text" class="form-control" name="title" value="">
+                                    <input id="weight" type="text" class="form-control" name="weight" value="{{ $product['weight'] }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="title">Price</label>
                                 <div class="col-md-6">
-                                    <input id="title" type="text" class="form-control" name="title" value="">
+                                    <input id="price" type="text" class="form-control" name="price" value="{{ $product['price'] }}">
                                 </div>
                             </div>
 
