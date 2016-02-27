@@ -5,6 +5,8 @@ use App\Product;
 use App\ProductPicture;
 use App\Category;
 
+use Illuminate\Pagination\Paginator;
+
 class ProductController extends Controller {
 
 	/*
@@ -37,10 +39,10 @@ class ProductController extends Controller {
 	{
         
         //    
-        $products = Product::paginate(15)->toArray();
+        $products = Product::paginate(2);
         
-        //var_dump($products);                       
-        return view('products_list')->with('products',$products);        
+       // var_dump($products);                       
+       return view('products_list')->with('products',$products);        
 	}
 
     /**
