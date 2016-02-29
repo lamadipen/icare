@@ -28,52 +28,28 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-8">
-                    <div class="product-content-right">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="product-images">
-                                    <div class="product-main-img">
-                                        <img src="" alt="">
-                                    </div>
-
-                                    <div class="product-gallery">
-                                 
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="product-inner">
-                                    <h2 class=""></h2>
-                                    <div class="product-inner-price">
-                                        <ins>NRs.</ins>
-                                    </div>
-
-                                    <div>
-                                        <h2 class="product-name">Specification</h2>
-                                        <p><span>Weight</span>gms</p>
-                                    </div>
-
-                                    <div>
-                                        <h2 class="product-name">Description</h2>                                        
-                                    </div>
-                                </div>
-                            </div>
+            <div class="related-products-carousel"> 
+            
+                @foreach($products as $product)           
+                <div class="single-product">
+                    <div class="product-f-image">
+                        <img src="/img/product-1.jpg" alt="">
+                        <div class="product-hover">
+                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div role="tabpanel" class="" id="profile">
-                        <h2 class="product-name">Inquire</h2>
-                        <div class="submit-review">
-                            <p><label for="name">Name</label> <input name="name" type="text" placeholder="Type your name"></p>
-                            <p><label for="email">Email</label> <input name="email" type="email" placeholder="Type your email"></p>
-                            <p><label for="review">Inquiry</label> <textarea name="inquiry" id="" cols="30" rows="10" placeholder="Type your inquiry"></textarea></p>
-                            <p><input type="submit" value="Submit"></p>
-                        </div>
+
+                    <h2><a href=""></a></h2>
+
+                    <div class="product-carousel-price">
+                        <ins>Nrs. 700.00</ins>
                     </div>
                 </div>
+                @endforeach
+            </div>
+            <div class="pagination col-md-12"> {!! $products->render() !!}</div>
+                
+                
             </div>
         </div>
     </div>
