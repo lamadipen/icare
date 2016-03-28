@@ -37,12 +37,12 @@ class ProductController extends Controller {
 	 */
 	public function index()
 	{
-        
-        //    
-        $products = Product::with('product_picture')->paginate(2);
+
+       $products = Product::with('product_picture')->paginate(2);
         
        var_dump($products);                       
        //return view('products_list')->with('products',$products);        
+
 	}
 
     /**
