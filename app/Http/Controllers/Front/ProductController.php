@@ -39,9 +39,11 @@ class ProductController extends Controller {
 	{
 
        $products = Product::with('product_picture')->paginate(2);
+       
+       //$products = Product::find(1)->product_picture()->where('isdefault','1')->paginate(2);
         
-       var_dump($products);                       
-       //return view('products_list')->with('products',$products);        
+       //var_dump($products);                       
+       return view('products_list')->with('products',$products);        
 
 	}
 

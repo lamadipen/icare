@@ -43,7 +43,7 @@ class Product extends Model {
      */
     public function product_picture()
     {
-        return $this->hasMany('App\ProductPicture');
+        return $this->hasMany('App\ProductPicture')->where('isdefault','1');
     }
 
 
