@@ -133,7 +133,7 @@
                     <div class="footer-newsletter">
                         <h2 class="footer-wid-title">General Inquiry</h2>
                         <div class="newsletter-form">
-                            <form action="{{url('admin/inquiry')}}" method="post">
+                            <form action="{{url('inquiry')}}" method="post">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="productid" value="0">
                                 <input type="text" name="name" placeholder="Type your name">

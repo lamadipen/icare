@@ -23,7 +23,7 @@
                             <p>Mandikatar, Kathmandu</p>
                             <p><a href="tel:+977-1-737474">+977-1-737474</a></p>
                         </address>
-                         <form action="{{url('admin/inquiry')}}" method="post">
+                         <form action="{{url('inquiry')}}" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="control-group">
                                 <div class="controls">
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <textarea name="message" placeholder="Type your inquiry" name="description" height="50"></textarea>
-                            
+                            <input type="hidden" name="productid" value="0">
                             <input type="submit" value="Subscribe">
                         </form>
                     </div>

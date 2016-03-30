@@ -20,6 +20,7 @@ Route::get('categories', 'Front\CategoryController@index');
 Route::get('product', 'Front\ProductController@index');
 Route::get('product/{id}', 'Front\ProductController@show');
 Route::get('fpage/{id}', 'Front\FrontendPageController@show');
+Route::resource('inquiry', 'Front\InquiryController');
 
 Route::group(['prefix' => 'admin'], function () {
 	Route::get('/','Admin\AdminHomeController@index');
@@ -29,7 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('page', 'Admin\PageController');
     Route::resource('inquiry', 'Admin\InquiryController');
     Route::resource('product', 'Admin\ProductController');
-    Route::put('inquiry', 'Admin\InquiryController');
+    
 });
 
 
