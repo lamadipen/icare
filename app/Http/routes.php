@@ -21,6 +21,7 @@ Route::get('product', 'Front\ProductController@index');
 Route::get('product/{id}', 'Front\ProductController@show');
 Route::get('fpage/{id}', 'Front\FrontendPageController@show');
 Route::resource('inquiry', 'Front\InquiryController');
+Route::get('categories/{id}','Front\CategoryController@show');
 
 Route::group(['prefix' => 'admin'], function () {
 	Route::get('/','Admin\AdminHomeController@index');

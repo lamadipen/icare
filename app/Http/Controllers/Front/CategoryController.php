@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Front;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -53,6 +53,19 @@ class CategoryController extends Controller {
 	public function show($id)
 	{
 		//
+		 //$Category = Category::find($id);
+		// $products = Product::where('cat_id','=',$id)->get()->sortBy('order')->paginate(2); 
+        //$defaultproductpicture = ProductPicture::where('product_id','=',$id)->where('isdefault','=',1)->get();
+        //return view('product')->with('catagory',$category)->with('products',$products);
+
+        $categories = DB::table('categories')
+            ->Join('Products', 'cat_id', '=', 'categories.id')
+            ->join('ProductPictures', 'Product_id', '=', 'Products.id')
+            ->where('cat_id','=',$id)
+            ->get();
+
+            var_dump($categories);
+        return view('categories')->with('categories',$categories);
 	}
 
 	/**
