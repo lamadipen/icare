@@ -37,14 +37,11 @@ class ProductController extends Controller {
 	 */
 	public function index()
 	{
-
-       $products = Product::with('product_picture')->paginate(2);
-       
-       //$products = Product::find(1)->product_picture()->where('isdefault','1')->paginate(2);
-        
-       //var_dump($products);                       
+        //    
+        $products = Product::paginate(2);   
+        //var_dump($products);    
+        //$products->setPath('product');                   
        return view('products_list')->with('products',$products);        
-
 	}
 
     /**
@@ -75,9 +72,11 @@ class ProductController extends Controller {
      */
     public function show($id)
     {
+
+
         $product = Product::find($id);
-        $productpictures = ProductPicture::where('productid','=',$id)->get()->sortBy('order');
-        $defaultproductpicture = ProductPicture::where('productid','=',$id)->where('isdefault','=',1)->get();
+        $productpictures = ProductPicture::where('product_id','=',$id)->get()->sortBy('order');
+        $defaultproductpicture = ProductPicture::where('product_id','=',$id)->where('isdefault','=',1)->get();
         return view('product')->with('product',$product)->with('productpictures',$productpictures)->with('defaultproductpicture', $defaultproductpicture[0]);
     }
 

@@ -43,7 +43,7 @@
                 </div>
                 <div class="item">
                     <div class="single-slide">
-                        <div class="slide-bg" style="background-image: url(productimages/2.jpg)"></div>
+                        <div class="slide-bg" style="background-image: url(public/productimages/2.jpg)"></div>
                         <div class="slide-text-wrapper">
                             <div class="slide-text">
                                 <div class="container">
@@ -133,7 +133,7 @@
                         <div class="product-carousel">
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="productimages/4.jpg" alt="">
+                                    <img src="public/productimages/4.jpg" alt="">
                                     <div class="product-hover">
 
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -148,7 +148,7 @@
                             </div>
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="productimages/5.jpg" alt="">
+                                    <img src="public/productimages/5.jpg" alt="">
                                     <div class="product-hover">
 
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -162,7 +162,7 @@
                             </div>
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="productimages/6.jpg" alt="">
+                                    <img src="public/productimages/6.jpg" alt="">
                                     <div class="product-hover">
 
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -177,7 +177,7 @@
                             </div>
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="productimages/7.jpg" alt="">
+                                    <img src="public/productimages/7.jpg" alt="">
                                     <div class="product-hover">
 
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -190,9 +190,11 @@
                                     <ins>Nrs 200.00</ins>
                                 </div>
                             </div>
+
+
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="productimages/8.jpg" alt="">
+                                    <img src="public/productimages/8.jpg" alt="">
                                     <div class="product-hover">
 
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -205,10 +207,12 @@
                                     <ins>Nrs .00</ins>
                                 </div>
                             </div>
+
+                            
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="productimages/9.jpg" alt="">
-                                    <div class="product-hover">
+                                    <img src="public/productimages/9.jpg" alt="">
+                                <div class="product-hover">
 
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
@@ -237,14 +241,14 @@
                     <div class="brand-wrapper">
                         <h2 class="section-title">Categories</h2>
                         <div class="brand-list">
-                            <img src="img/services_logo__1.jpg" alt="">
-                            <img src="img/services_logo__2.jpg" alt="">
-                            <img src="img/services_logo__3.jpg" alt="">
-                            <img src="img/services_logo__4.jpg" alt="">
-                            <img src="img/services_logo__1.jpg" alt="">
-                            <img src="img/services_logo__2.jpg" alt="">
-                            <img src="img/services_logo__3.jpg" alt="">
-                            <img src="img/services_logo__4.jpg" alt="">
+                            <img src="public/img/services_logo__1.jpg" alt="">
+                            <img src="public/img/services_logo__2.jpg" alt="">
+                            <img src="public/img/services_logo__3.jpg" alt="">
+                            <img src="public/img/services_logo__4.jpg" alt="">
+                            <img src="public/img/services_logo__1.jpg" alt="">
+                            <img src="public/img/services_logo__2.jpg" alt="">
+                            <img src="public/img/services_logo__3.jpg" alt="">
+                            <img src="public/img/services_logo__4.jpg" alt="">
                         </div>
                     </div>
                 </div>

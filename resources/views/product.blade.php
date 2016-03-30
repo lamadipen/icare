@@ -34,12 +34,12 @@
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src="{{'/img/' . $defaultproductpicture->filename_mid }}" alt="">
+                                        <img src="{{ url('')}}/public/img/{{ $defaultproductpicture->filename_mid }}" alt="">
                                     </div>
 
                                     <div class="product-gallery">
                                     @foreach ($productpictures as $productpicture)
-                                        <img src="{{'/img/' . $productpicture->filename_thumb }}" alt="">
+                                        <img src="{{ url('') }}{{'public/img/' . $productpicture->filename_thumb }}" alt="">
                                     @endforeach
                                     </div>
                                 </div>
@@ -74,6 +74,7 @@
                             <p><label for="email">Email</label> <input name="email" type="email" placeholder="Type your email"></p>
                             <p><label for="review">Inquiry</label> <textarea name="inquiry" id="" cols="30" rows="10" placeholder="Type your inquiry"></textarea></p>
                             <p><input type="submit" value="Submit"></p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -89,8 +90,9 @@
             <h2 class="related-products-title">Related Products</h2>
             <div class="related-products-carousel">
                 <div class="single-product">
+
                     <div class="product-f-image">
-                        <img src="/img/product-1.jpg" alt="">
+                        <img src="{{ url('')}}/public/img/product-1.jpg" alt="">
                         <div class="product-hover">
                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>
@@ -104,7 +106,7 @@
                 </div>
                 <div class="single-product">
                     <div class="product-f-image">
-                        <img src="/img/product-2.jpg" alt="">
+                        <img src="{{ url('')}}/public/img/product-2.jpg" alt="">
                         <div class="product-hover">
                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>
@@ -117,7 +119,7 @@
                 </div>
                 <div class="single-product">
                     <div class="product-f-image">
-                        <img src="/img/product-3.jpg" alt="">
+                        <img src="{{ url('')}}/public/img/product-3.jpg" alt="">
                         <div class="product-hover">
                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>
@@ -131,7 +133,7 @@
                 </div>
                 <div class="single-product">
                     <div class="product-f-image">
-                        <img src="/img/product-4.jpg" alt="">
+                        <img src="{{ url ('') }}/public/img/product-4.jpg" alt="">
                         <div class="product-hover">
                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>
@@ -145,7 +147,7 @@
                 </div>
                 <div class="single-product">
                     <div class="product-f-image">
-                        <img src="/img/product-5.jpg" alt="">
+                        <img src="{{ url('') }}/public/img/product-5.jpg" alt="">
                         <div class="product-hover">
                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>
@@ -159,7 +161,7 @@
                 </div>
                 <div class="single-product">
                     <div class="product-f-image">
-                        <img src="/img/product-6.jpg" alt="">
+                        <img src="{{ url('')}}/public/img/product-6.jpg" alt="">
                         <div class="product-hover">
                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>

@@ -16,7 +16,7 @@ class Inquiry extends Model {
      *
      * @var array
      */
-    protected $fillable = ['productid', 'name', 'email', 'description'];
+    protected $fillable = ['productid', 'name', 'email', 'description','phoneno'];
 
     /**
      * Input validation Rules.

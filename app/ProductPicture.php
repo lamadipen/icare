@@ -43,4 +43,7 @@ class ProductPicture extends Model {
         'order'         => 'required'
     );
 
+
+
+
 }

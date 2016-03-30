@@ -30,19 +30,19 @@
             <div class="row">
             <div class="related-products-carousel"> 
             
-                @foreach($products as $product) 
-                {{ $product->product_picture[0]['filename_thumb'] }}          
+                @foreach($products as $product)           
                 <div class="single-product">
                     <div class="product-f-image">
-                        <img src="{{ asset('/img/')}}/{{ $product->product_picture[0]['filename_thumb'] }}" alt="">
+                        <img src="{{ asset('public/img/')}}/{{ $product->product_picture['0']['filename_thumb'] }}" alt="">
                         <div class="product-hover">
-                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                <a href="{{ url('product') }}/{{ $product->id }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>
                     </div>
 
-                    <h2><a href=""></a></h2>
+                    <h2><a href="">{{ $product->title }}</a></h2>
 
                     <div class="product-carousel-price">
+
                         <ins>Nrs. 700.00</ins>
                     </div>
                 </div>

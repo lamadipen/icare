@@ -18,9 +18,9 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     
     <!-- Custom CSS -->
-      <link href="{{ asset('/css/owl.carousel.css') }}" rel="stylesheet">
-      <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-      <link href="{{ asset('/css/responsive.css') }}" rel="stylesheet">
+      <link href="{{ asset('public/css/owl.carousel.css') }}" rel="stylesheet">
+      <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+      <link href="{{ asset('public/css/responsive.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,12 +66,12 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="/">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                         </li>
 
-                        <li><a href="/fpage/1">About Us</a></li>
-                        <li><a href="/product">Products</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="{{ url('/fpage/1')}}">About Us</a></li>
+                        <li><a href="{{ url('product')}}">Products</a></li>
+                        <li><a href="{{ url('contact') }}">Contact</a></li>
                     </ul>
                 </div>  
             </div>
@@ -106,8 +106,8 @@
                         <h2>i<span>CareComfort</span></h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
                         <div class="footer-social">
-                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/spicatechnologies/?fref=ts" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
                         </div>
                     </div>
@@ -117,11 +117,10 @@
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/fpage/1')}}">About Us</a></li>
+                            <li><a href="{{ url('product')}}">Products</a></li>
+                            <li><a href="{{ url('contact') }}">Contact</a></li>
                         </ul>                        
                     </div>
                 </div>
@@ -134,11 +133,13 @@
                     <div class="footer-newsletter">
                         <h2 class="footer-wid-title">General Inquiry</h2>
                         <div class="newsletter-form">
-                            <form action="#">
+                            <form action="{{url('admin/inquiry')}}" method="post">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="text" placeholder="Type your name">
-                                <input type="email" placeholder="Type your email">
-                                <textarea placeholder="Type your inquiry"></textarea>
+                                <input type="hidden" name="productid" value="0">
+                                <input type="text" name="name" placeholder="Type your name">
+                                <input type="email" name="email" placeholder="Type your email">
+                                <input type="text" name="phoneno" placeholder="Type your phoneno">
+                                <textarea name="description" placeholder="Type your inquiry"></textarea>
                                 <input type="submit" value="Subscribe">
                             </form>
                         </div>
@@ -168,13 +169,13 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     
     <!-- jQuery sticky menu -->
-    <script src="{{ asset('/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('public/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.sticky.js') }}"></script>
     
     <!-- jQuery easing -->
-    <script src="{{ asset('/js/jquery.easing.1.3.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.easing.1.3.min.js') }}"></script>
     
     <!-- Main Script -->
-    <script src="{{ asset('/js/main.js') }}"></script>
+    <script src="{{ asset('public/js/main.js') }}"></script>
   </body>
 </html>

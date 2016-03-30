@@ -22,12 +22,14 @@ Route::get('product/{id}', 'Front\ProductController@show');
 Route::get('fpage/{id}', 'Front\FrontendPageController@show');
 
 Route::group(['prefix' => 'admin'], function () {
+	Route::get('/','Admin\AdminHomeController@index');
     Route::get('home', 'Admin\AdminHomeController@index');
     Route::resource('user', 'Admin\UserController');
     Route::resource('category', 'Admin\CategoryController');
     Route::resource('page', 'Admin\PageController');
     Route::resource('inquiry', 'Admin\InquiryController');
     Route::resource('product', 'Admin\ProductController');
+    Route::put('inquiry', 'Admin\InquiryController');
 });
 
 

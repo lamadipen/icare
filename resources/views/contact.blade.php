@@ -23,30 +23,31 @@
                             <p>Mandikatar, Kathmandu</p>
                             <p><a href="tel:+977-1-737474">+977-1-737474</a></p>
                         </address>
-                        <form action="#">
+                         <form action="{{url('admin/inquiry')}}" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="control-group">
                                 <div class="controls">
                                     <div class="input-group icare-input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input class="form-control contactformcontrol" placeholder="Full name" id="inputIcon" required="required" type="text">
+                                        <input class="form-control contactformcontrol" placeholder="Full name" name="name" id="inputIcon" required="required" type="text">
                                     </div>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="controls">
                                     <div class="input-group icare-input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                        <input class="form-control contactformcontrol" placeholder="Your Email" id="inputIcon" required="required" type="email">
+                                        <input class="form-control contactformcontrol" placeholder="Your Email" name="email" id="inputIcon" required="required" type="email">
                                     </div>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="controls">
                                     <div class="input-group icare-input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-phone lyphicon-sm"></i></span>
-                                        <input class="form-control contactformcontrol" placeholder="Telephone" id="inputIcon" type="tel">
+                                        <input class="form-control contactformcontrol" placeholder="Telephone" name="phoneno" id="inputIcon" type="tel">
                                     </div>
                                 </div>
                             </div>
-                            <textarea name="message" placeholder="Type your inquiry" height="50"></textarea>
+                            <textarea name="message" placeholder="Type your inquiry" name="description" height="50"></textarea>
+                            
                             <input type="submit" value="Subscribe">
                         </form>
                     </div>

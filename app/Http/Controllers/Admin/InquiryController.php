@@ -34,6 +34,7 @@ class InquiryController extends Controller {
 	public function create()
 	{
         //
+
 	}
 
     /**
@@ -45,6 +46,16 @@ class InquiryController extends Controller {
 	public function store(Request $request)
 	{
         //
+
+        $inquiry = new Inquiry();
+                $inquiry->name = Input::get('name');
+                $inquiry->productid = Input::get('productid');
+                $inquiry->email = Input::get('email');
+                $inquiry->phoneno = Input::get('phoneno');
+                $inquiry->description = Input::get('description');                       
+                $inquiry->save(); 
+
+         return redirect('contact');
 	}
 
 	/**

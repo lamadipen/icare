@@ -37,14 +37,10 @@ class Product extends Model {
         'price'         => 'required',
         'weight'        => 'required'
     );
-    
-    /**
-     * Get the pictures associated with the product.
-     */
-    public function product_picture()
+
+     public function product_picture()
     {
         return $this->hasMany('App\ProductPicture')->where('isdefault','1');
     }
-
 
 }
