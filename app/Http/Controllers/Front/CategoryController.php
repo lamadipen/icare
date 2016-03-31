@@ -59,11 +59,21 @@ class CategoryController extends Controller {
         //return view('product')->with('catagory',$category)->with('products',$products);
 
 
+		/**
+
+		* For getting the title of the category which was not fetched with
+		* the query after this due to similar column name
+
+		*/
 		$cat_title = Category::find($id);
 
 
 
+		/**
+		
+		* Gets the product in the category gien catagory
 
+		*/
 
         $categories = DB::table('categories')
             ->Join('Products', 'cat_id', '=', 'categories.id')
@@ -71,9 +81,14 @@ class CategoryController extends Controller {
             ->where('cat_id','=',$id)
             ->get();
 
-           
+         /**
+         * calls the view with these variables
+         */
         return view('categories')->with('categories',$categories)->with('cat_title',$cat_title);
 	}
+
+
+
 
 	/**
 	 * Show the form for editing the specified resource.
