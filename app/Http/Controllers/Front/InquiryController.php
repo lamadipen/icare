@@ -6,8 +6,23 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Inquiry;
+
+/** 
+* is needed for using input
+*/
 use Illuminate\Support\Facades\Input;
+
+/**
+* is needed for using redirect
+*/
 use Illuminate\Support\Facades\Redirect;
+
+
+/**
+* I have added this controller for the insertion of inquiry
+* as inquirycontroller in the admin was in accessable
+* @samundra  
+*/
 
 class InquiryController extends Controller {
 
@@ -38,7 +53,7 @@ class InquiryController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		//inquiry model was added
 		 $inquiry = new Inquiry();
                 $inquiry->name = Input::get('name');
                 $inquiry->productid = Input::get('productid');
