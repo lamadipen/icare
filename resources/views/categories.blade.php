@@ -1,3 +1,4 @@
+
 @extends('layouts.frontend')
 
 @section('product')
@@ -22,26 +23,27 @@
                 <div class="col-md-12">
                     <div class="product-breadcroumb">
                         <a href="">Home</a>
-                        <a href="">{{$categories->title or 'no title'}}</a>
+                        <a href="">{{$cat_title->title or 'no title'}}</a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8">
                     <div class="category-content-right">
-                        @foreach ($categories as $category)
+                        
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="row products-thumb-list">
-                                    @foreach($category->products as $product)
+                                    @foreach ($categories as $category)
                                     <div class="col-sm-2">
-                                            <img src="{{'/img/' . $product->filename_thumb }}" />
-                                        <span>{{ $product->title }}</span>
+                                            <img src="{{ url('public/productimages')}}/{{$category->filename_thumb }}" />
+                                        <span>{{ $category->title }}</span>
                                     </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                       
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -165,4 +167,4 @@
             <li><a href="#">Category 5</a></li>
         </ul>
     </div>
-@endsection
+@endsection 
