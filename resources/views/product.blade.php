@@ -71,11 +71,13 @@
                         <h2 class="product-name">Inquire</h2>
                         <div class="submit-review">
                             <form action="{{url('inquiry')}}" method="post">
-                            <input type="hidden" name="productid" value="{{ $product->id }}"></input>
-                            <p><label for="name">Name</label> <input name="name" type="text" placeholder="Type your name"></p>
-                            <p><label for="email">Email</label> <input name="email" type="email" placeholder="Type your email"></p>
-                            <p><label for="review">Inquiry</label> <textarea name="inquiry" id="" cols="30" rows="10" name="discription" placeholder="Type your inquiry"></textarea></p>
-                            <p><input type="submit" value="Submit"></p>
+
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="productid" value="{{ $product->id }}"></input>
+                                <p><label for="name">Name</label> <input name="name" type="text" placeholder="Type your name"></p>
+                                <p><label for="email">Email</label> <input name="email" type="email" placeholder="Type your email"></p>
+                                <p><label for="review">Inquiry</label> <textarea name="description" id="" cols="30" rows="10"  placeholder="Type your inquiry"></textarea></p>
+                                <p><input type="submit" value="Submit"></p>
                             </form>
                         </div>
                     </div>
