@@ -62,6 +62,34 @@
                                     <textarea id="description" type="text" class="form-control ckeditor" name="description">{{ $product['description'] }}</textarea>
                                 </div>
                             </div>
+                            <br>
+
+                            <!--the edit for the featured item -->
+                             <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Featured</label>
+
+
+                                <div class="col-md-6">
+                                    
+                                    
+                                    @if ($product['featured'] === 1)
+                                        <label>Yes</label>
+                                        {!!  Form::radio('featured', '1', 1); !!}
+                                        <label>No</label>
+                                        {!!  Form::radio('featured', '0', 0); !!}
+                                
+                                    @else
+                                        <label>Yes</label>
+                                        {!!  Form::radio('featured', '1', 0); !!}
+                                        <label>No</label>
+                                        {!!  Form::radio('featured', '0', 1); !!}
+                                 
+                                        
+                                    @endif
+
+                                    </div>
+                                    
+                            </div>  
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">

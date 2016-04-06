@@ -58,7 +58,10 @@ class ProductController extends Controller {
                 $product->cat_id = Input::get('category_id');
                 $product->weight = Input::get('weight');
                 $product->price = Input::get('price');
-                $product->description = Input::get('description');                       
+                $product->description = Input::get('description'); 
+
+                //for determining wether it is featured or not
+                $product->featured = Input::get('featured');                      
                 $product->save();    
             
                 //Getting Last inserted id            
@@ -155,7 +158,8 @@ class ProductController extends Controller {
             $product->cat_id = Input::get('category_id');
             $product->weight = Input::get('weight');
             $product->price = Input::get('price');
-            $product->description = Input::get('description');   
+            $product->description = Input::get('description');
+            $product->featured = Input::get('featured'); 
             $product->save();
 
             return Redirect::to('admin/product');

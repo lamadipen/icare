@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Product;
+use DB;
 
 class HomePageController extends Controller {
 
@@ -32,7 +34,16 @@ class HomePageController extends Controller {
 	 */
 	public function index()
 	{
-        return view('welcome');
+		 $prod_features = DB::table('products')
+            ->Join('productpictures', 'productpictures.product_id', '=', 'products.id')
+            ->select('products.*','productpictures.filename_thumb')
+            ->where('featured',1)
+            ->get();
+
+		//$products = Product::where('featured',1)->get();
+		//var_dump($products);
+            var_dump($prod_features);
+        return view('welcome')->with('products', $prod_features);
 	}
 
 }

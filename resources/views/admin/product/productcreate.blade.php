@@ -113,7 +113,17 @@
                                     {!!  Form::radio('is_default', 'true', false); !!}
                                     <label>No</label>
                                     {!!  Form::radio('is_default', 'false', true); !!}
-                                </div>
+                                 </div>
+                            </div> 
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="title">Featured</label>
+                                <div class="col-md-6">
+                                    <label>Yes</label>
+                                    {!!  Form::radio('featured', '1', 0); !!}
+                                    <label>No</label>
+                                    {!!  Form::radio('featured', '0', 1); !!}
+                                 </div>
                             </div>                                                        
                     </div>
                     <!-- second form section end-->

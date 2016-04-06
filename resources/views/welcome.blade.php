@@ -131,99 +131,32 @@
                     <div class="latest-product">
                         <h2 class="section-title">Featured Products</h2>
                         <div class="product-carousel">
+
+                         @foreach($products as $product)  
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="public/productimages/4.jpg" alt="">
+                                    <img src="{{ url('public/productimages')}}/{{$product->filename_thumb }}" alt="">
                                     <div class="product-hover">
 
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
 
-                                <h2><a href="single-product.html">Product Title</a></h2>
+                                <h2><a href="single-product.html"> {{ $product->title }} </a></h2>
 
                                 <div class="product-carousel-price">
-                                    <ins>Nrs 700.00</ins>
+                                    <ins>Nrs{{ $product->price }}</ins>
                                 </div>
                             </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="public/productimages/5.jpg" alt="">
-                                    <div class="product-hover">
+                        @endforeach
 
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="single-product.html">Product Title</a></h2>
-                                <div class="product-carousel-price">
-                                    <ins>Nrs 899.00</ins>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="public/productimages/6.jpg" alt="">
-                                    <div class="product-hover">
-
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="single-product.html">Product Title</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>Nrs 400.00</ins>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="public/productimages/7.jpg" alt="">
-                                    <div class="product-hover">
-
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="single-product.html">Product Title</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>Nrs 200.00</ins>
-                                </div>
-                            </div>
+                           
 
 
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="public/productimages/8.jpg" alt="">
-                                    <div class="product-hover">
-
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="single-product.html">Product Title</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>Nrs .00</ins>
-                                </div>
-                            </div>
+                         
 
                             
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="public/productimages/9.jpg" alt="">
-                                <div class="product-hover">
-
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="single-product.html">Product Title</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>Nrs 400.00</ins>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

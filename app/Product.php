@@ -16,7 +16,7 @@ class Product extends Model {
      *
      * @var array
      */
-    protected $fillable = ['title', 'description','slug', 'price', 'weight','cat_id'];
+    protected $fillable = ['title', 'description','slug', 'price', 'weight','cat_id','featured'];
 
     /**
      * Input validation Rules.
