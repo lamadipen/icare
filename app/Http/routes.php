@@ -13,9 +13,7 @@
 
 Route::get('/', 'Front\HomePageController@index');
 Route::get('/home', 'Front\HomePageController@index');
-Route::get('contact', function(){
-    return view('contact', ['title' => 'Contact Us']);
-});
+Route::get('contact', 'Front\ContactController@index');
 Route::get('categories', 'Front\CategoryController@index');
 Route::get('product', 'Front\ProductController@index');
 Route::get('product/{id}', 'Front\ProductController@show');

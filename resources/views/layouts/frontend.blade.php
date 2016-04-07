@@ -65,13 +65,13 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active">
+                        <li {{{ (Request::is('/') ? 'class=active' : '') }}} >
                             <a href="{{ url('/') }}">Home</a>
                         </li>
 
-                        <li><a href="{{ url('/fpage/1')}}">About Us</a></li>
-                        <li><a href="{{ url('product')}}">Products</a></li>
-                        <li><a href="{{ url('contact') }}">Contact</a></li>
+                        <li {{{ (Request::is('fpage/1') ? 'class=active' : '') }}}><a href="{{ url('/fpage/1')}}">About Us</a></li>
+                        <li {{{ (Request::is('product') ? 'class=active' : '') }}}><a href="{{ url('product')}}">Products</a></li>
+                        <li {{{ (Request::is('contact') ? 'class=active' : '') }}}><a href="{{ url('contact') }}">Contact</a></li>
                     </ul>
                 </div>  
             </div>
@@ -126,7 +126,16 @@
                 </div>
                 
                 <div class="col-md-3 col-sm-6">
-                    @yield('footercategorymenu')
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Categories</h2>
+                    <ul>
+
+                    @foreach($footer_categories as $foot_cat)
+                        <li><a href="{{ url('categories') }}\{{ $foot_cat->id}}">{{ $foot_cat->title}}</a></li>
+                    @endforeach
+                       
+                    </ul>
+                </div>
                 </div>
                 
                 <div class="col-md-3 col-sm-6">

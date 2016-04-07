@@ -34,6 +34,8 @@ class HomePageController extends Controller {
 	 */
 	public function index()
 	{
+		$footer_categories = DB::table('categories')->take(4)->get();
+		//var_dump($footer_categories);
 		 $prod_features = DB::table('products')
             ->Join('productpictures', 'productpictures.product_id', '=', 'products.id')
             ->select('products.*','productpictures.filename_thumb')
@@ -42,8 +44,8 @@ class HomePageController extends Controller {
 
 		//$products = Product::where('featured',1)->get();
 		//var_dump($products);
-            var_dump($prod_features);
-        return view('welcome')->with('products', $prod_features);
+            //var_dump($prod_features);
+        return view('welcome')->with('products', $prod_features)->with('footer_categories',$footer_categories);
 	}
 
 }

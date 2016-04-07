@@ -15,13 +15,15 @@ class CategoryController extends Controller {
 	 */
 	public function index()
 	{
+
+		$footer_categories = DB::table('categories')->take(4)->get();
         $categories = Category::getCategoriesAndProducts();
         $categories = DB::table('categories')
             ->leftJoin('products', 'users.id', '=', 'contacts.user_id')
             ->join('orders', 'users.id', '=', 'orders.user_id')
             ->select('users.*', 'contacts.phone', 'orders.price')
             ->get();
-        return view('categories')->with('categories',$categories);
+        return view('categories')->with('categories',$categories)->with('footer_categories',$footer_categories);
 	}
 
 	/**
@@ -67,6 +69,13 @@ class CategoryController extends Controller {
 		*/
 		$cat_title = Category::find($id);
 
+		/**
+		
+		* gets the catagories for the footer
+
+		*/
+		$footer_categories = DB::table('categories')->take(4)->get();
+
 
 
 		/**
@@ -84,7 +93,7 @@ class CategoryController extends Controller {
          /**
          * calls the view with these variables
          */
-        return view('categories')->with('categories',$categories)->with('cat_title',$cat_title);
+        return view('categories')->with('categories',$categories)->with('cat_title',$cat_title)->with('footer_categories',$footer_categories);
 	}
 
 

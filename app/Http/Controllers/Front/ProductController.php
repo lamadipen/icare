@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Product;
 use App\ProductPicture;
 use App\Category;
+use DB;
 
 use Illuminate\Pagination\Paginator;
 
@@ -37,11 +38,13 @@ class ProductController extends Controller {
 	 */
 	public function index()
 	{
-        //    
+        //  
+
+        $footer_categories = DB::table('categories')->take(4)->get();  
         $products = Product::paginate(2);   
         //var_dump($products);    
         //$products->setPath('product');                   
-       return view('products_list')->with('products',$products);        
+       return view('products_list')->with('products',$products)->with('footer_categories',$footer_categories);        
 	}
 
     /**

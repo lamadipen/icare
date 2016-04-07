@@ -148,14 +148,7 @@
                                     <ins>Nrs{{ $product->price }}</ins>
                                 </div>
                             </div>
-                        @endforeach
-
-                           
-
-
-                         
-
-                            
+                        @endforeach 
                             
                         </div>
                     </div>
@@ -199,15 +192,5 @@
     </div> <!-- End product widget area -->
 @endsection
 
-@section('footercategorymenu')
-    <div class="footer-menu">
-        <h2 class="footer-wid-title">Categories</h2>
-        <ul>
-            <li><a href="{{ url('categories') }}\1">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li><a href="#">Category 3</a></li>
-            <li><a href="#">Category 4</a></li>
-            <li><a href="#">Category 5</a></li>
-        </ul>
-    </div>
-@endsection
+
+ 

@@ -1,12 +1,12 @@
-<?php namespace App\Http\Controllers\Front;
+<?php namespace App\Http\Controllers\front;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Page;
 use DB;
+
 use Illuminate\Http\Request;
 
-class FrontendPageController extends Controller {
+class ContactController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,7 +15,10 @@ class FrontendPageController extends Controller {
 	 */
 	public function index()
 	{
-		//
+
+		$footer_categories = DB::table('categories')->take(4)->get();
+
+		return view('contact', ['title' => 'Contact Us'])->with('footer_categories',$footer_categories);
 	}
 
 	/**
@@ -46,9 +49,7 @@ class FrontendPageController extends Controller {
 	 */
 	public function show($id)
 	{
-		$footer_categories = DB::table('categories')->take(4)->get();
-        $page = Page::find($id);
-        return view('page')->with('page',$page)->with('footer_categories',$footer_categories);
+		//
 	}
 
 	/**
