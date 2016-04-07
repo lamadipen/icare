@@ -28,24 +28,53 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-8">
-                    <div class="category-content-right">
-                        
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="row products-thumb-list">
+                
+                            <div class="col-sm-7">
+                             
+                                
                                     @foreach ($categories as $category)
-                                    <div class="col-sm-2">
-                                            <img src="{{ url('public/productimages')}}/{{$category->filename_thumb }}" />
-                                        <span>{{ $category->title }}</span>
+
+                                    <div class="col-sm-4">
+                                    
+                                    <div class="single-product" >
+
+
+                                        <div class="product-f-image" style="">
+
+
+
+
+
+                                            
+                                                    <img src="{{ url('public/productimages')}}/{{$category->filename_thumb }}" width="100%" alt=""/>
+                                                    
+                                                    <div class="product-hover">
+                                                        <a href="{{ url('product') }}/{{ $category->id }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                                    </div>
+                                            
+                                        </div>
+
+                                        <h2><a href="">{{ $category->title }}</a></h2>
+
+                                        <div class="product-carousel-price">
+
+                                                <ins>NRS {{ $category->price}}</ins>
+                                                <br>
+                                                <br>
+
+                                        </div>
                                     </div>
+
+                                    </div>
+                                   
+                                    
+
                                     @endforeach
-                                </div>
+                                
                             </div>
-                        </div>
+                        
                        
-                    </div>
-                </div>
+                    
                 <div class="col-md-4">
                     <div role="tabpanel" class="" id="profile">
                         <h2 class="product-name">Inquire</h2>
