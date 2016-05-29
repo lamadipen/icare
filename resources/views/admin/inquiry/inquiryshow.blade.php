@@ -16,12 +16,16 @@
                             {{ $inquiry->email }}
                         </div>
                         <div class="col-md-8">
+                            {{ $inquiry->phoneno }}
+                        </div>
+
+                        <div class="col-md-8">
                             {{ $inquiry->productid }}
                         </div>
                         <div class="col-md-8">
                             {{ $inquiry->description }}
                         </div>
-
+                        
                     </div>
                  </div>
             </div>

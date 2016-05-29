@@ -1,5 +1,6 @@
 @extends('layouts.frontend')
 
+
 @section('homepageslider')
     <div class="slider-area">
         <div class="zigzag-bottom"></div>
@@ -122,6 +123,7 @@
     </div> <!-- End promo area -->
 @endsection
 
+<!--featured products display -->
 @section('featuredproducts')
     <div class="maincontent-area">
         <div class="zigzag-bottom"></div>
@@ -138,11 +140,11 @@
                                     <img src="{{ url('public/productimages')}}/{{$product->filename_thumb }}" alt="">
                                     <div class="product-hover">
 
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="{{ url('product') }}/{{ $product->id }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
 
-                                <h2><a href="single-product.html"> {{ $product->title }} </a></h2>
+                                <h2><a href="{{ url('product') }}/{{ $product->id }}"> {{ $product->title }} </a></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>Nrs{{ $product->price }}</ins>

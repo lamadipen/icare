@@ -34,12 +34,12 @@
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src="{{ url('')}}/public/img/{{ $defaultproductpicture->filename_mid }}" alt="">
+                                        <img src="{{ url('')}}/public/productimages/{{ $defaultproductpicture->filename_mid }}" alt="">
                                     </div>
 
                                     <div class="product-gallery">
                                     @foreach ($productpictures as $productpicture)
-                                        <img src="{{ url('') }}{{'public/img/' . $productpicture->filename_thumb }}" alt="">
+                                        <img src="{{ url('') }}/{{'public/productimages/' . $productpicture->filename_thumb }}" alt="">
                                     @endforeach
                                     </div>
                                 </div>
@@ -93,104 +93,28 @@
         <div class="container">
             <h2 class="related-products-title">Related Products</h2>
             <div class="related-products-carousel">
-                <div class="single-product">
+                @foreach($prod_features as $product)  
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <img src="{{ url('public/productimages')}}/{{$product->filename_thumb }}" alt="">
+                                    <div class="product-hover">
 
-                    <div class="product-f-image">
-                        <img src="{{ url('')}}/public/img/product-1.jpg" alt="">
-                        <div class="product-hover">
-                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                        </div>
-                    </div>
+                                        <a href="{{ url('product') }}/{{ $product->id }}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+                                </div>
 
-                    <h2><a href="">Product 1</a></h2>
+                                <h2><a href="single-product.html"> {{ $product->title }} </a></h2>
 
-                    <div class="product-carousel-price">
-                        <ins>Nrs. 700.00</ins>
-                    </div>
-                </div>
-                <div class="single-product">
-                    <div class="product-f-image">
-                        <img src="{{ url('')}}/public/img/product-2.jpg" alt="">
-                        <div class="product-hover">
-                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                        </div>
-                    </div>
-
-                    <h2><a href="">Product 1</a></h2>
-                    <div class="product-carousel-price">
-                        <ins>Nrs. 899.00</ins>
-                    </div>
-                </div>
-                <div class="single-product">
-                    <div class="product-f-image">
-                        <img src="{{ url('')}}/public/img/product-3.jpg" alt="">
-                        <div class="product-hover">
-                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                        </div>
-                    </div>
-
-                    <h2><a href="">Product 1</a></h2>
-
-                    <div class="product-carousel-price">
-                        <ins>Nrs. 400.00</ins>
-                    </div>
-                </div>
-                <div class="single-product">
-                    <div class="product-f-image">
-                        <img src="{{ url ('') }}/public/img/product-4.jpg" alt="">
-                        <div class="product-hover">
-                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                        </div>
-                    </div>
-
-                    <h2><a href="">Product 1</a></h2>
-
-                    <div class="product-carousel-price">
-                        <ins>Nrs. 200.00</ins>
-                    </div>
-                </div>
-                <div class="single-product">
-                    <div class="product-f-image">
-                        <img src="{{ url('') }}/public/img/product-5.jpg" alt="">
-                        <div class="product-hover">
-                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                        </div>
-                    </div>
-
-                    <h2><a href="">Product 1</a></h2>
-
-                    <div class="product-carousel-price">
-                        <ins>Nrs. 1200.00</ins>
-                    </div>
-                </div>
-                <div class="single-product">
-                    <div class="product-f-image">
-                        <img src="{{ url('')}}/public/img/product-6.jpg" alt="">
-                        <div class="product-hover">
-                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                        </div>
-                    </div>
-
-                    <h2><a href="">Product 1</a></h2>
-
-                    <div class="product-carousel-price">
-                        <ins>Nrs. 400.00</ins>
-                    </div>
-                </div>
+                                <div class="product-carousel-price">
+                                    <ins>Nrs. {{ $product->price }}</ins>
+                                </div>
+                            </div>
+                        @endforeach 
+                
+                
+               
             </div>
         </div>
     </div>
 @endsection
 
-@section('footercategorymenu')
-    <div class="footer-menu">
-        <h2 class="footer-wid-title">Categories</h2>
-        <ul>
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li><a href="#">Category 3</a></li>
-            <li><a href="#">Category 4</a></li>
-            <li><a href="#">Category 5</a></li>
-        </ul>
-    </div>
-@endsection

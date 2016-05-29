@@ -42,9 +42,14 @@ class ProductController extends Controller {
 
         $footer_categories = DB::table('categories')->take(4)->get();  
         $products = Product::paginate(2);   
+        $prod_features = DB::table('products')
+            ->Join('productpictures', 'productpictures.product_id', '=', 'products.id')
+            ->select('products.*','productpictures.filename_thumb')
+            ->where('featured',1)
+            ->get();
         //var_dump($products);    
         //$products->setPath('product');                   
-       return view('products_list')->with('products',$products)->with('footer_categories',$footer_categories);        
+       return view('products_list')->with('products',$products)->with('footer_categories',$footer_categories)->with('featured_products', $prod_features);        
 	}
 
     /**
@@ -75,12 +80,33 @@ class ProductController extends Controller {
      */
     public function show($id)
     {
+        /** 
+        *for the footer catagories
+        *
+        */
+        $footer_categories = DB::table('categories')->take(4)->get();
+        
 
+        /**
+
+        * featured product and related product display
+
+        */
+
+        $prod_features = DB::table('products')
+            ->Join('productpictures', 'productpictures.product_id', '=', 'products.id')
+            ->select('products.*','productpictures.filename_thumb')
+            ->where('featured',1)
+            ->get();
 
         $product = Product::find($id);
+
         $productpictures = ProductPicture::where('product_id','=',$id)->get()->sortBy('order');
-        $defaultproductpicture = ProductPicture::where('product_id','=',$id)->where('isdefault','=',1)->get();
-        return view('product')->with('product',$product)->with('productpictures',$productpictures)->with('defaultproductpicture', $defaultproductpicture[0]);
+
+        $defaultproductpicture = ProductPicture::where('product_id','=',$id)->get();
+        
+        return view('product')->with('product',$product)->with('productpictures',$productpictures)->with('defaultproductpicture', $defaultproductpicture[0])->with('footer_categories',$footer_categories)->with('prod_features',$prod_features);
+
     }
 
     /**

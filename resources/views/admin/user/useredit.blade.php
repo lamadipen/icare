@@ -33,7 +33,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                {!! \Illuminate\Html\FormFacade::submit('Register', ['class' => 'btn btn-primary', 'name' => 'submit']) !!}
+                                {!! \Illuminate\Html\FormFacade::submit('Update', ['class' => 'btn btn-primary', 'name' => 'submit']) !!}
                             </div>
                         </div>
 
